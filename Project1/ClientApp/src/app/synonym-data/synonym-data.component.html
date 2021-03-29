@@ -1,0 +1,39 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+  <div>
+    <label for="term">
+      Term
+    </label>
+    <input id="term" type="text" formControlName="term">
+  </div>
+
+  <div>
+    <label for="synonymList">
+      Synonyms
+    </label>
+    <input id="synonymList" type="text" formControlName="synonymList">
+  </div>
+
+  <button class="button" type="submit">Save</button>
+
+</form>
+
+
+<div>
+  <table class='table table-striped' aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th>Term</th>
+        <th>Synonyms</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let syn of synonyms">
+        <td>{{ syn.term }}</td>
+        <td>{{ syn.synonymList }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
